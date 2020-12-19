@@ -1,0 +1,16 @@
+<app-nav-bar></app-nav-bar>
+<div class="container col-lg-4">
+    <br>
+    <h1 style="text-align: center;">Available Stations</h1>
+    <table style="border: 0ch; width: 100%; text-align: center;" *ngFor="let station of stations">
+        <tr>
+            <th>Station Id</th>
+            <th>Station Name</th>
+        </tr>
+        <tr>
+            <td>{{ station.id }}</td>
+            <td>{{ station.name }}</td>
+        </tr>
+    </table>
+</div>
+<app-footer></app-footer>
