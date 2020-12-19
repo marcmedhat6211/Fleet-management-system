@@ -20,6 +20,8 @@ class CreateBusesTable extends Migration
             $table->foreign('src_id')->references('id')->on('stations');
             $table->unsignedBigInteger('dest_id');
             $table->foreign('dest_id')->references('id')->on('stations');
+            
+            //seats entity is a week entity --> seats can not exist without a bus
             $table->boolean('seat_1')->default(true);
             $table->boolean('seat_2')->default(true);
             $table->boolean('seat_3')->default(true);

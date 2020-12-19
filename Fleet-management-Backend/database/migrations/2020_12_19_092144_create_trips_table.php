@@ -20,8 +20,6 @@ class CreateTripsTable extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('bus_id');
             $table->foreign('bus_id')->references('id')->on('buses');
-            $table->unsignedBigInteger('seat_id');
-            $table->foreign('seat_id')->references('id')->on('seats');
         });
     }
 
