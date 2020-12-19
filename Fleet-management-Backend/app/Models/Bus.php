@@ -9,10 +9,6 @@ class Bus extends Model
 {
     use HasFactory;
 
-    public function users() {
-        return $this->hasMany(User::class);
-    }
-
     public function seats() {
         return $this->hasMany(Seat::class);
     }
