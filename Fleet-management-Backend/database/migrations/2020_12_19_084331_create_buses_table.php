@@ -16,10 +16,10 @@ class CreateBusesTable extends Migration
         Schema::create('buses', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->unsignedBigInteger('src_id');
-            $table->foreign('src_id')->references('id')->on('stations');
-            $table->unsignedBigInteger('dest_id');
-            $table->foreign('dest_id')->references('id')->on('stations');
+            $table->string('src_name');
+            $table->foreign('src_name')->references('name')->on('stations');
+            $table->string('dest_name');
+            $table->foreign('dest_name')->references('name')->on('stations');
             
             //seats entity is a week entity --> seats can not exist without a bus
             $table->boolean('seat_1')->default(true);

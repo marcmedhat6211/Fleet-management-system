@@ -15,22 +15,27 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         DB::table('stations')->insert([
+            'id' => 1,
             'name' => 'Cairo'
         ]);
 
         DB::table('stations')->insert([
+            'id' => 2,
             'name' => 'Giza'
         ]);
 
         DB::table('stations')->insert([
+            'id' => 3,
             'name' => 'AlFayyum'
         ]);
 
         DB::table('stations')->insert([
+            'id' => 4,
             'name' => 'AlMinya'
         ]);
 
         DB::table('stations')->insert([
+            'id' => 5,
             'name' => 'Asyut'
         ]);
     }
