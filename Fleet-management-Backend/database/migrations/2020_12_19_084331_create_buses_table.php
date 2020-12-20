@@ -34,6 +34,9 @@ class CreateBusesTable extends Migration
             $table->boolean('seat_10')->default(true);
             $table->boolean('seat_11')->default(true);
             $table->boolean('seat_12')->default(true);
+
+            $table->integer('seats_number')->default(12);
+            $table->boolean('availability')->default(true);
         });
     }
 
