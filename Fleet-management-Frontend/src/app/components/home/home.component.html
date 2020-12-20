@@ -3,52 +3,29 @@
 <div class="main">
     <div class="content">
         <div class="container_12">
-            <div class="grid_5">
-                <h3>Booking Form</h3>
+            <div class="grid_5 down">           
+                <h3>Search available trips by entering your pick-up point and your destination</h3>\
                 <form id="bookingForm">
                     <div class="fl1">
-                        <div class="tmInput">
-                            <input name="Name" placeHolder="Name:" type="text"
-                                data-constraints='@NotEmpty @Required @AlphaSpecial'>
-                        </div>
                         <div class="tmInput">
                             <input name="From" placeHolder="From:" type="text" data-constraints="@NotEmpty @Required ">
                         </div>
                     </div>
                     <div class="fl1">
-                        <div class="tmInput">
-                            <input name="Email" placeHolder="Email:" type="text"
-                                data-constraints="@NotEmpty @Required @Email">
-                        </div>
                         <div class="tmInput mr0">
                             <input name="To" placeHolder="To:" type="text" data-constraints="@NotEmpty @Required">
                         </div>
                     </div>
                     <div class="clear"></div>
-                    <strong>Time</strong>
-                    <div class="tmInput">
-                        <input name="Time" placeHolder="" type="text" data-constraints="@NotEmpty @Required">
-                    </div>
                     <div class="clear"></div>
-                    <strong>Date</strong>
-                    <label class="tmDatepicker">
-                        <input type="text" name="Date" placeHolder='20/05/2014'
-                            data-constraints="@NotEmpty @Required @Date">
-                    </label>
-                    <div class="tmTextarea">
-                        <textarea name="Message" placeHolder="Message"
-                            data-constraints='@NotEmpty @Required @Length(min=20,max=999999)'></textarea>
-                    </div>
                     <a href="#" class="btn" data-type="submit">Submit</a>
                 </form>
+                <h3>Choose from avilable trips</h3>
             </div>
-            <div class="grid_6 prefix_1">               
-                <a href="index2.html" class="type"><img src="../../../assets/images/page1_img1.jpg" alt=""><span
-                        class="type_caption">Economy</span></a>
-                <a href="index2.html" class="type"><img src="../../../assets/images/page1_img2.jpg" alt=""><span
-                        class="type_caption">Standard</span></a>
-                <a href="index2.html" class="type"><img src="../../../assets/images/page1_img3.jpg" alt=""><span
-                        class="type_caption">Lux</span></a>
+            <h3>Available Stations</h3>
+            <div class="grid_6 prefix_1" *ngFor="let station of stations">            
+                <a href="index2.html" class="type"><span class="type type_caption">{{ station.name }}</span></a>
+                <br>
             </div>
             <div class="clear"></div>
         </div>
