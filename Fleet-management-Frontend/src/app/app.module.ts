@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
