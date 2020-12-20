@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\StationController;
+use App\Http\Controllers\API\BusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 /*STATIONS ROUTE*/
 Route::get('/stations', [StationController::class, 'index']);
+
+/*BUSES ROUTE*/
+Route::get('/buses', [BusController::class, 'index']);
