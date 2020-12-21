@@ -16,8 +16,25 @@ use App\Http\Controllers\API\BusController;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::group([
+    //User Routes
+], function ($router) {
+
+    /*LOGIN ROUTE*/
+    Route::post('login', 'AuthController@login');
+
+    /*SIGNUP ROUTE*/
+    Route::post('signup', 'AuthController@signup');
+
+    /*LOGOUT ROUTE*/
+    Route::post('logout', 'AuthController@logout');
+
+    /*REFRESHING THE TOKEN ROUTE*/
+    Route::post('refresh', 'AuthController@refresh');
+
+    /*LOGGED-IN USER ROUTE*/
+    Route::post('me', 'AuthController@me');
+
 });
 
 /*STATIONS ROUTE*/
