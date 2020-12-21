@@ -1,53 +1,41 @@
-<app-nav-bar></app-nav-bar>
-
-<div class="main">
-    <div class="content">
-        <div class="container_12">
-            <div class="grid_5 down">
-                <h3>Search available trips by entering your pick-up point and your destination</h3>
-                <form method="POST" id="bookingForm" [formGroup]="srcAndDestForm"
-                    (ngSubmit)="onSubmit(srcAndDestForm.value)">
-                    <div class="form-group">
-                        <label for="src_name">Pick-up point</label>
-                        <select class="form-control" placeholder="Choose a pickup point" id="src_name"
-                            formControlName="src_name">
-                            <option *ngFor="let station of stations">
-                                {{ station.name }}
-                            </option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="dest_name">Destination</label>
-                        <select type="text" class="form-control" placeholder="Choose your destination" id="dest_name"
-                            formControlName="dest_name">
-                            <option *ngFor="let station of stations">
-                                {{ station.name }}
-                            </option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn">Submit</button>
-                </form>
-                <h3>Choose from avilable trips</h3>
-                <form id="bookingForm">
-                    <div class="form-group">
-                        <label for="av_trips">Available trips</label>
-                        <select type="text" class="form-control" placeholder="Choose a trip" id="av_trips">
-                            <option *ngFor="let bus of buses" value="">
-                                From {{ bus.src_name }} To {{ bus.dest_name }}
-                            </option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn">Search</button>
-                </form>
-            </div>
-            <div class="grid_6 prefix_1">
-                <h3>Available Stations</h3>
-                <a *ngFor="let station of stations" href="#" class="type"><span class="type type_caption">{{
-                        station.name }}</span><br><br><br></a>
-            </div>
-            <div class="clear"></div>
+<div class="grid_5 down">
+    <h3>Search available trips by entering your pick-up point and your destination</h3>
+    <form method="POST" id="bookingForm" [formGroup]="srcAndDestForm" (ngSubmit)="onSubmit(srcAndDestForm.value)">
+        <div class="form-group">
+            <label for="src_name">Pick-up point</label>
+            <select class="form-control" placeholder="Choose a pickup point" id="src_name" formControlName="src_name">
+                <option *ngFor="let station of stations">
+                    {{ station.name }}
+                </option>
+            </select>
         </div>
-    </div>
+        <div class="form-group">
+            <label for="dest_name">Destination</label>
+            <select type="text" class="form-control" placeholder="Choose your destination" id="dest_name"
+                formControlName="dest_name">
+                <option *ngFor="let station of stations">
+                    {{ station.name }}
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <h3>Choose from avilable trips</h3>
+    <form id="bookingForm">
+        <div class="form-group">
+            <label for="av_trips">Available trips</label>
+            <select type="text" class="form-control" placeholder="Choose a trip" id="av_trips">
+                <option *ngFor="let bus of buses" value="">
+                    From {{ bus.src_name }} To {{ bus.dest_name }}
+                </option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Search</button>
+    </form>
 </div>
-
-<app-footer></app-footer>
+<div class="grid_6 prefix_1">
+    <h3>Available Stations</h3>
+    <a *ngFor="let station of stations" href="#" class="type"><span class="type type_caption">{{
+            station.name }}</span><br><br><br></a>
+</div>
+<div class="clear"></div>
