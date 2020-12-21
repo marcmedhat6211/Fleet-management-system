@@ -36,7 +36,7 @@ class AuthController extends Controller
         $credentials = request(['email', 'password']);
 
         if (! $token = auth()->claims(['isAdmin'=> 'false'])->attempt($credentials)) {
-            return response()->json(['error' => "Email or Pssword doesn't exist"], 401);
+            return response()->json(['error' => "Email or Password doesn't exist"], 401);
         }
 
         return $this->respondWithToken($token);
@@ -47,7 +47,6 @@ class AuthController extends Controller
     {
         $user= User::create($request->all());
         return $this->login($user);
-
     }
 
 

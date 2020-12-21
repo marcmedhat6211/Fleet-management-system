@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\StationController;
 use App\Http\Controllers\API\BusController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,19 +22,19 @@ Route::group([
 ], function ($router) {
 
     /*LOGIN ROUTE*/
-    Route::post('login', 'AuthController@login');
+    Route::post('login', [AuthController::class, 'login']);
 
     /*SIGNUP ROUTE*/
-    Route::post('signup', 'AuthController@signup');
+    Route::post('signup', [AuthController::class, 'signup']);
 
     /*LOGOUT ROUTE*/
-    Route::post('logout', 'AuthController@logout');
+    Route::post('logout', [AuthController::class, 'logout']);
 
     /*REFRESHING THE TOKEN ROUTE*/
-    Route::post('refresh', 'AuthController@refresh');
+    Route::post('refresh', [AuthController::class, 'refresh']);
 
     /*LOGGED-IN USER ROUTE*/
-    Route::post('me', 'AuthController@me');
+    Route::post('me', [AuthController::class, 'me']);
 
 });
 
