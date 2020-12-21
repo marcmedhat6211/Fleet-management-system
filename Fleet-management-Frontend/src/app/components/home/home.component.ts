@@ -37,15 +37,6 @@ export class HomeComponent implements OnInit {
       localStorage.setItem('buses', JSON.stringify(this.buses));
     });
 
-
-    var busesObj = JSON.parse(localStorage.getItem('buses'));
-    for(const [key, value] of Object.entries(busesObj)) {
-      if(Object.values(value).indexOf('Cairo') > -1) {
-        console.log('Cairo exists');
-      } else {
-        console.log('Cairo does not exist');
-      }
-    }
   }
 
   searchForTrips(src, dest) {
