@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\StationController;
 use App\Http\Controllers\API\BusController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\API\TripController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,3 +44,6 @@ Route::get('/stations', [StationController::class, 'index']);
 
 /*BUSES ROUTE*/
 Route::get('/buses', [BusController::class, 'index']);
+
+/*TRIPS ROUTE*/
+Route::post('/trips/create', [TripController::class, 'create']);
