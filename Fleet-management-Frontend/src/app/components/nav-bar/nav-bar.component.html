@@ -3,9 +3,7 @@
       <div class="grid_12">
           <nav class="horizontal-nav full-width horizontalNav-notprocessed">
               <ul class="sf-menu">
-                  <li class="current"><a href="index.html">Home</a></li>
-                  <li><a href="index-1.html">About</a></li>
-                  <li><a href="index-4.html">Contacts</a></li>
+                  <li class="current"><a routerLink="/">Home</a></li>
                   <li><a routerLink="login" *ngIf="!loggedIn">Login</a></li>
                   <li><a href="#" (click)="logout($event)" *ngIf="loggedIn">Logout</a></li>
               </ul>
