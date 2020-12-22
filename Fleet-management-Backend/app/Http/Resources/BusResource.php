@@ -16,6 +16,7 @@ class BusResource extends JsonResource
     public function toArray($request)
     {
         return [
+            'id' => $this->id,
             'src_name' => $this->src_name,
             'dest_name' => $this->dest_name,
             'seat_1' => $this->seat_1,
