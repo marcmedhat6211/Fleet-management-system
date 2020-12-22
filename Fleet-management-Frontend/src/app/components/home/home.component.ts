@@ -6,6 +6,8 @@ import { StationsService } from 'src/app/services/stations.service';
 import { Stations } from 'src/app/Stations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
+import { Router } from '@angular/router';
+import { TokenService } from 'src/app/services/token.service';
 
 @Component({
   selector: 'app-home',
@@ -18,8 +20,15 @@ export class HomeComponent implements OnInit {
   stations: Stations;
   public buses: Buses;
   public busesObj = {};
+  public availableTrip = {};
 
-  constructor(private stationsService: StationsService, private busesService: BusesService, private formBuilder: FormBuilder) {
+  constructor(
+    private stationsService: StationsService,
+    private busesService: BusesService,
+    private formBuilder: FormBuilder,
+    private route: Router,
+    private token: TokenService
+  ) {
     this.srcAndDestForm = this.formBuilder.group({
       src_name: '',
       dest_name: ''
@@ -42,7 +51,8 @@ export class HomeComponent implements OnInit {
   searchForTrips(src, dest) {
     var busesObj = JSON.parse(localStorage.getItem('buses'));
     for (const [key, value] of Object.entries(busesObj)) {
-      if(Object.values(value).indexOf(src) > -1 && Object.values(value).indexOf(dest) > -1) {
+      if (Object.values(value).indexOf(src) > -1 && Object.values(value).indexOf(dest) > -1) {
+        localStorage.setItem('available_trip', JSON.stringify(value));
         return true;
       }
     }
@@ -51,14 +61,19 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(data) {
-    if(data.src_name == data.dest_name) {
+    if (data.src_name == data.dest_name) {
       alert('Pick-up point can\'t be the same destination point');
-    } else if(!this.searchForTrips(data.src_name, data.dest_name)) {
+    } else if (!this.searchForTrips(data.src_name, data.dest_name)) {
       alert('Sorry, no available buses for this trip');
     } else {
       this.srcAndDestForm.reset();
       localStorage.setItem('src_name', data.src_name);
       localStorage.setItem('dest_name', data.dest_name);
+      if (this.token.loggedIn()) {
+        this.route.navigateByUrl('trips');
+      } else if (!this.token.loggedIn()) {
+        this.route.navigateByUrl('login');
+      }
     }
   }
 

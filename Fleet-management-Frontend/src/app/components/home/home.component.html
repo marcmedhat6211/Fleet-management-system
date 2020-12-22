@@ -18,18 +18,6 @@
                 </option>
             </select>
         </div>
-        <button type="submit" class="btn">Submit</button>
-    </form>
-    <h3>Choose from avilable trips</h3>
-    <form id="bookingForm">
-        <div class="form-group">
-            <label for="av_trips">Available trips</label>
-            <select type="text" class="form-control" placeholder="Choose a trip" id="av_trips">
-                <option *ngFor="let bus of buses" value="">
-                    From {{ bus.src_name }} To {{ bus.dest_name }}
-                </option>
-            </select>
-        </div>
         <button type="submit" class="btn">Search</button>
     </form>
 </div>

@@ -11,10 +11,14 @@ export class AuthService {
   constructor(private httpClient: HttpClient) { }
 
   signup(data) {
-    return this.httpClient.post(`${this.baseURL}/signup`, data)
+    return this.httpClient.post(`${this.baseURL}/signup`, data);
   }
 
   login(data) {
-    return this.httpClient.post(`${this.baseURL}/login`, data)
+    return this.httpClient.post(`${this.baseURL}/login`, data);
+  }
+
+  bookTrip(data) {
+    return this.httpClient.post(`${this.baseURL}/trips/create`, data);
   }
 }

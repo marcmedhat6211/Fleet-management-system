@@ -1,106 +1,124 @@
-<app-nav-bar></app-nav-bar>
+<div class="container">
+    <div class="col-lg-4">
+        <h3>Trip pick-up point: {{ buses.src_name }}</h3>
+        <h3>Trip destination: {{ buses.dest_name }}</h3>
+        <br>
+        <h6>Available seats are in green and unavailable seats are in red</h6>
+    <table class="table table-bordered" style="text-align: center;">
+        <tr>
+            <td *ngIf="buses.seat_1" style="background-color: green;">
+                1
+            </td>
+            <td *ngIf="!buses.seat_1" style="background-color: red;">
+                1
+            </td>
 
-<div class="main">
-    <div class="content">
-        <h1>Select your seat</h1>
-        <div class="containerbus">
-            <!-- Squared ONE -->
-            <div class="autobus">
+            <td *ngIf="buses.seat_2" style="background-color: green;">
+                2
+            </td>
+            <td *ngIf="!buses.seat_2" style="background-color: red;">
+                2
+            </td>
+        </tr>
+        <tr>
+            <td *ngIf="buses.seat_3" style="background-color: green;">
+                3
+            </td>
+            <td *ngIf="!buses.seat_3" style="background-color: red;">
+                3
+            </td>
 
-                <div class="fila">
-                    <div class="section">
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat1" name="check" />
-                            <label for="seat1">1</label>
-                        </div>
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat2" name="check" />
-                            <label for="seat2">2</label>
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat3" name="check" />
-                            <label for="seat3">3</label>
-                        </div>
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat4" name="check" />
-                            <label for="seat4">4</label>
-                        </div>
-                    </div>
-                </div>
+            <td *ngIf="buses.seat_4" style="background-color: green;">
+                4
+            </td>
+            <td *ngIf="!buses.seat_4" style="background-color: red;">
+                4
+            </td>
+        </tr>
+        <tr>
+            <td *ngIf="buses.seat_5" style="background-color: green;">
+                5
+            </td>
+            <td *ngIf="!buses.seat_5" style="background-color: red;">
+                5
+            </td>
 
-                <div class="fila">
-                    <div class="section">
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat5" name="check" />
-                            <label for="seat5">5</label>
-                        </div>
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat6" name="check" />
-                            <label for="seat6">6</label>
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat7" name="check" />
-                            <label for="seat7">7</label>
-                        </div>
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat8" name="check" />
-                            <label for="seat8">8</label>
-                        </div>
-                    </div>
-                </div>
+            <td *ngIf="buses.seat_6" style="background-color: green;">
+                6
+            </td>
+            <td *ngIf="!buses.seat_6" style="background-color: red;">
+                6
+            </td>
+        </tr>
+        <tr>
+            <td *ngIf="buses.seat_7" style="background-color: green;">
+                7
+            </td>
+            <td *ngIf="!buses.seat_7" style="background-color: red;">
+                7
+            </td>
 
-                <div class="fila">
-                    <div class="section">
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat9" name="check" />
-                            <label for="seat9">9</label>
-                        </div>
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat10" name="check" />
-                            <label for="seat10">10</label>
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat11" name="check" />
-                            <label for="seat11">11</label>
-                        </div>
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat12" name="check" />
-                            <label for="seat12">12</label>
-                        </div>
-                    </div>
-                </div>
+            <td *ngIf="buses.seat_8" style="background-color: green;">
+                8
+            </td>
+            <td *ngIf="!buses.seat_8" style="background-color: red;">
+                8
+            </td>
+        </tr>
+        <tr>
+            <td *ngIf="buses.seat_9" style="background-color: green;">
+                9
+            </td>
+            <td *ngIf="!buses.seat_9" style="background-color: red;">
+                9
+            </td>
 
-                <div class="fila">
-                    <div class="section">
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat13" name="check" />
-                            <label for="seat13">13</label>
-                        </div>
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat14" name="check" />
-                            <label for="seat14">14</label>
-                        </div>
-                    </div>
-                    <div class="section">
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat15" name="check" />
-                            <label for="seat15">15</label>
-                        </div>
-                        <div class="seat">
-                            <input type="checkbox" value="None" id="seat16" name="check" />
-                            <label for="seat16">16</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <td *ngIf="buses.seat_10" style="background-color: green;">
+                10
+            </td>
+            <td *ngIf="!buses.seat_10" style="background-color: red;">
+                10
+            </td>
+        </tr>
+        <tr>
+            <td *ngIf="buses.seat_11" style="background-color: green;">
+                11
+            </td>
+            <td *ngIf="!buses.seat_11" style="background-color: red;">
+                11
+            </td>
+
+            <td *ngIf="buses.seat_12" style="background-color: green;">
+                12
+            </td>
+            <td *ngIf="!buses.seat_12" style="background-color: red;">
+                12
+            </td>
+        </tr>
+    </table>
+
+    <form #tripForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="alert alert-danger" [hidden]="!error">
+            {{ error.seat_number }}
         </div>
-    </div>
+        <div class="form-group">
+            <label for="seat_number">Please Choose a seat number</label>
+            <select name="seat_number" type="text" class="form-control" id="seat_number" [(ngModel)]="form.seat_number">
+                <option value="1" *ngIf="buses.seat_1">seat 1</option>
+                <option value="2" *ngIf="buses.seat_2">seat 2</option>
+                <option value="3" *ngIf="buses.seat_3">seat 3</option>
+                <option value="4" *ngIf="buses.seat_4">seat 4</option>
+                <option value="5" *ngIf="buses.seat_5">seat 5</option>
+                <option value="6" *ngIf="buses.seat_6">seat 6</option>
+                <option value="7" *ngIf="buses.seat_7">seat 7</option>
+                <option value="8" *ngIf="buses.seat_8">seat 8</option>
+                <option value="9" *ngIf="buses.seat_9">seat 9</option>
+                <option value="10" *ngIf="buses.seat_10">seat 10</option>
+                <option value="11" *ngIf="buses.seat_11">seat 11</option>
+                <option value="12" *ngIf="buses.seat_12">seat 12</option>
+            </select>
+        </div>
+        <button type="submit" class="btn">Book</button>
+    </form>
 </div>
-
-<app-footer></app-footer>
+</div>
