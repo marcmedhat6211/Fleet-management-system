@@ -31,6 +31,7 @@ class BusResource extends JsonResource
             'seat_10' => $this->seat_10,
             'seat_11' => $this->seat_11,
             'seat_12' => $this->seat_12,
+            'availability' => $this->availability
         ];
     }
 }
