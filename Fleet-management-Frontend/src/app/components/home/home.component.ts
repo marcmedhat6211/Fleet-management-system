@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Buses } from 'src/app/Buses';
-import { BusesService } from 'src/app/services/buses.service';
-import { StationsService } from 'src/app/services/stations.service';
 import { Stations } from 'src/app/Stations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { elementEventFullName } from '@angular/compiler/src/view_compiler/view_compiler';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/services/token.service';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -23,11 +22,10 @@ export class HomeComponent implements OnInit {
   public availableTrip = {};
 
   constructor(
-    private stationsService: StationsService,
-    private busesService: BusesService,
     private formBuilder: FormBuilder,
     private route: Router,
-    private token: TokenService
+    private token: TokenService,
+    private auth: AuthService
   ) {
     this.srcAndDestForm = this.formBuilder.group({
       src_name: '',
@@ -36,11 +34,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.stationsService.showStations().subscribe((data: any) => {
+    this.auth.showStations().subscribe((data: any) => {
       this.stations = data.data;
     });
 
-    this.busesService.getBuses().subscribe((data: any) => {
+    this.auth.getBuses().subscribe((data: any) => {
       this.buses = data.data;
       console.log(this.buses);
       localStorage.setItem('buses', JSON.stringify(this.buses));

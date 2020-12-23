@@ -21,4 +21,12 @@ export class AuthService {
   bookTrip(data) {
     return this.httpClient.post(`${this.baseURL}/trips/create`, data);
   }
+
+  getBuses() {
+    return this.httpClient.get(this.baseURL + '/api/buses');
+  }
+
+  showStations() {
+    return this.httpClient.get(this.baseURL + '/api/stations');
+  }
 }
