@@ -98,19 +98,19 @@ class BusController extends AdminController
 
         $form->select('src_name', __('Pick-up point'))->options($mapped)->rules('required');
         $form->select('dest_name', __('Destination'))->options($mapped)->rules('required');
-        $form->switch('seat_1', __('Seat 1'))->default(1)->required();
-        $form->switch('seat_2', __('Seat 2'))->default(1)->required();
-        $form->switch('seat_3', __('Seat 3'))->default(1)->required();
-        $form->switch('seat_4', __('Seat 4'))->default(1)->required();
-        $form->switch('seat_5', __('Seat 5'))->default(1)->required();
-        $form->switch('seat_6', __('Seat 6'))->default(1)->required();
-        $form->switch('seat_7', __('Seat 7'))->default(1)->required();
-        $form->switch('seat_8', __('Seat 8'))->default(1)->required();
-        $form->switch('seat_9', __('Seat 9'))->default(1)->required();
-        $form->switch('seat_10', __('Seat 10'))->default(1)->required();
-        $form->switch('seat_11', __('Seat 11'))->default(1)->required();
-        $form->switch('seat_12', __('Seat 12'))->default(1)->required();
-        $form->switch('availability', __('Availability'))->default(1)->required();
+        $form->switch('seat_1', __('Seat 1'))->default(1);
+        $form->switch('seat_2', __('Seat 2'))->default(1);
+        $form->switch('seat_3', __('Seat 3'))->default(1);
+        $form->switch('seat_4', __('Seat 4'))->default(1);
+        $form->switch('seat_5', __('Seat 5'))->default(1);
+        $form->switch('seat_6', __('Seat 6'))->default(1);
+        $form->switch('seat_7', __('Seat 7'))->default(1);
+        $form->switch('seat_8', __('Seat 8'))->default(1);
+        $form->switch('seat_9', __('Seat 9'))->default(1);
+        $form->switch('seat_10', __('Seat 10'))->default(1);
+        $form->switch('seat_11', __('Seat 11'))->default(1);
+        $form->switch('seat_12', __('Seat 12'))->default(1);
+        $form->switch('availability', __('Availability'))->default(1);
 
         return $form;
     }
