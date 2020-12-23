@@ -8,6 +8,8 @@ export class TokenService {
   private iss = {
     login: 'https://senergic-fleet-management.herokuapp.com/api/login',
     signup: 'https://senergic-fleet-management.herokuapp.com/api/signup'
+    // login: 'http://localhost:8000/api/login',
+    // signup: 'http://localhost:8000/api/signup'
   }
 
   constructor() { }

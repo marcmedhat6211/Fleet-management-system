@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  private baseURL = 'https://senergic-fleet-management.herokuapp.com/api'; 
+  private baseURL = 'https://senergic-fleet-management.herokuapp.com/api';
+  // private baseURL = 'http://localhost:8000/api';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,10 +24,10 @@ export class AuthService {
   }
 
   getBuses() {
-    return this.httpClient.get(this.baseURL + '/api/buses');
+    return this.httpClient.get(this.baseURL + '/buses');
   }
 
   showStations() {
-    return this.httpClient.get(this.baseURL + '/api/stations');
+    return this.httpClient.get(this.baseURL + '/stations');
   }
 }

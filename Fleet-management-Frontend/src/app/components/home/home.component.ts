@@ -62,7 +62,7 @@ export class HomeComponent implements OnInit {
 
 
   onSubmit(data) {
-    // if (this.token.loggedIn()) {
+    if (this.token.loggedIn()) {
       if (data.src_name == data.dest_name) {
         alert('Pick-up point can\'t be the same destination point');
       } else if (!this.searchForTrips(data.src_name, data.dest_name)) {
@@ -77,11 +77,10 @@ export class HomeComponent implements OnInit {
         // alert('Sorry, this trip is fully booked');
         // }
       }
+    } else {
+      alert('Please login first');
+      this.route.navigateByUrl('login');
     }
-    // } else {
-    //   alert('Please login first');
-    //   this.route.navigateByUrl('login');
-    // }
   }
 
 
