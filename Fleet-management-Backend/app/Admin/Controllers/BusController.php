@@ -89,9 +89,15 @@ class BusController extends AdminController
     protected function form()
     {
         $form = new Form(new Bus());
+        
+        $sources = Station::get('name')->pluck('name')->toArray();
+        $mapped = [];
+        foreach($sources as $source) {
+            $mapped["$source"] = $source;
+        }
 
-        $form->select('src_name', __('Pick-up point'))->options(Station::all()->pluck('name'))->rules('required');
-        $form->select('dest_name', __('Destination'))->options(Station::all()->pluck('name'))->rules('required');
+        $form->select('src_name', __('Pick-up point'))->options($mapped)->rules('required');
+        $form->select('dest_name', __('Destination'))->options($mapped)->rules('required');
         $form->switch('seat_1', __('Seat 1'))->default(1)->required();
         $form->switch('seat_2', __('Seat 2'))->default(1)->required();
         $form->switch('seat_3', __('Seat 3'))->default(1)->required();
