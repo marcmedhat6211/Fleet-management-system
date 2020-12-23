@@ -62,26 +62,24 @@ export class HomeComponent implements OnInit {
 
 
   onSubmit(data) {
-    if (this.token.loggedIn()) {
-      if (data.src_name == data.dest_name) {
-        alert('Pick-up point can\'t be the same destination point');
-      } else if (!this.searchForTrips(data.src_name, data.dest_name)) {
-        alert('Sorry, no available buses for this trip');
-      } else {
-        // if (data.availability) {
-        this.srcAndDestForm.reset();
-        localStorage.setItem('src_name', data.src_name);
-        localStorage.setItem('dest_name', data.dest_name);
-        this.route.navigateByUrl('trips');
-        // } else {
-        // alert('Sorry, this trip is fully booked');
-        // }
-      }
+    // if (this.token.loggedIn()) {
+    if (data.src_name == data.dest_name) {
+      alert('Pick-up point can\'t be the same destination point');
+    } else if (!this.searchForTrips(data.src_name, data.dest_name)) {
+      alert('Sorry, no available buses for this trip');
     } else {
-      alert('Please login first');
-      this.route.navigateByUrl('login');
+      // if (data.availability) {
+      this.srcAndDestForm.reset();
+      localStorage.setItem('src_name', data.src_name);
+      localStorage.setItem('dest_name', data.dest_name);
+      this.route.navigateByUrl('trips');
+      // } else {
+      // alert('Sorry, this trip is fully booked');
+      // }
     }
   }
-
-
+  // } else {
+  //   alert('Please login first');
+  //   this.route.navigateByUrl('login');
+  // }
 }
