@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class StationsService {
 
-  private PORT = "http://localhost:8000";
+  private PORT = "http://senergic-fleet-management.herokuapp.com";
 
   constructor(private httpClient: HttpClient) { }
   

@@ -1,0 +1,8 @@
+{
+    "name": "fleet-frontend",
+    "version": "1.0.0",
+    "license": "MIT",
+    "scripts": {
+        "build:Fleet-management-Frontend": "npm --prefix Fleet-management-Frontend run build"
+    }
+}

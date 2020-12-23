@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class AuthService {
 
-  private baseURL = 'http://localhost:8000/api'; 
+  private baseURL = 'http://senergic-fleet-management.herokuapp.com/api'; 
 
   constructor(private httpClient: HttpClient) { }
 
