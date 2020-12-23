@@ -72,7 +72,8 @@ export class HomeComponent implements OnInit {
       this.srcAndDestForm.reset();
       localStorage.setItem('src_name', data.src_name);
       localStorage.setItem('dest_name', data.dest_name);
-      this.route.navigate(['/trips']);
+      this.route.navigateByUrl('trips');
+      // this.route.navigate(['/trips']);
       // } else {
       // alert('Sorry, this trip is fully booked');
       // }
