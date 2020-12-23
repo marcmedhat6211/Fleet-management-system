@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
       if (Object.values(value).indexOf(src) > -1 && Object.values(value).indexOf(dest) > -1) {
         localStorage.setItem('available_trip', JSON.stringify(value));
         console.log(value);
-        
+
         return true;
       }
     }
@@ -60,27 +60,28 @@ export class HomeComponent implements OnInit {
     return false;
   }
 
-  
+
   onSubmit(data) {
-    if (this.token.loggedIn()) {
+    // if (this.token.loggedIn()) {
       if (data.src_name == data.dest_name) {
         alert('Pick-up point can\'t be the same destination point');
       } else if (!this.searchForTrips(data.src_name, data.dest_name)) {
         alert('Sorry, no available buses for this trip');
       } else {
         // if (data.availability) {
-          this.srcAndDestForm.reset();
-          localStorage.setItem('src_name', data.src_name);
-          localStorage.setItem('dest_name', data.dest_name);
-          this.route.navigateByUrl('trips');
+        this.srcAndDestForm.reset();
+        localStorage.setItem('src_name', data.src_name);
+        localStorage.setItem('dest_name', data.dest_name);
+        this.route.navigateByUrl('trips');
         // } else {
-          // alert('Sorry, this trip is fully booked');
+        // alert('Sorry, this trip is fully booked');
         // }
       }
-    } else {
-      alert('Please login first');
-      this.route.navigateByUrl('login');
     }
+    // } else {
+    //   alert('Please login first');
+    //   this.route.navigateByUrl('login');
+    // }
   }
 
 
