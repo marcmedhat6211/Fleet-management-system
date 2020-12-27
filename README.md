@@ -29,9 +29,3 @@ Steps to start the Fleet Management System Project:
    
    **Open your browser and navigate to http://localhost:4200
    **That's it now you are all set :)**
-   
-   NOTE:
-    I know that the layout is not very nice and that there is a lot of bugs and that there are a lot of requirements missing,
-    but i can continue modifying the project as i just need more time for it that's all.
-    And in all cases i just want to really thank you for being so professional and for this task, as i have really learned a lot from it.
-    Thank you for your time and consideration! :)
